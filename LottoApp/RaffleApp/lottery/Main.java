@@ -20,7 +20,7 @@ public class Main {
            
         if (validDB == false)
         {
-     		System.out.println("The Database was not found! Please check the correct path. "); 
+     		System.out.println("The Database was not found! Please check for the correct path. "); 
        		System.exit(0);
         }
            
@@ -31,17 +31,17 @@ public class Main {
         
         if (validFileName == false)
         {
-       		System.out.println("The Participants.txt file was not found! Please check the correct path. "); 
+       		System.out.println("The Participants.txt file was not found! Please check for the correct path. "); 
        		System.exit(0);
         }
         
-        // Check if Participants file is available
+        // Check if Prizes file is available
         String fileNamePrizes= "C:\\LotteryApp\\Files\\Prizes.txt"; 
         validFileName = Validation.fileExists(fileNamePrizes);
         
         if (validFileName == false)
         {
-       		System.out.println("The Prizes.txt file was not found! Please check the correct path. "); 
+       		System.out.println("The Prizes.txt file was not found! Please check for the correct path. "); 
        		System.exit(0);
         }
         
@@ -80,7 +80,7 @@ public class Main {
 		while (true) {	
 			
 		  Scanner sc = new Scanner(System.in);    //System.in is a standard input stream  
-		  System.out.format("Please enter how many giveaway Prizes for this contest - there are %d prizes - (0 for exit) : " + "\n", prizes.size() );
+		  System.out.format("Welcome to our annual raffle drawings!! How many Prizes are we starting with in this round? - there are %d prizes - (0 for exit) : " + "\n", prizes.size() );
 		  int giveAways = sc.nextInt();  
           
 		  if (giveAways == 0) {  // Exit the while
@@ -91,7 +91,7 @@ public class Main {
 		    boolean isValidRange= Validation.validateRange(giveAways, prizes.size() ); // -1
 		    if (isValidRange == false)
 		    {
-			   System.out.println("Sorry but do not have enough giveaway!!! Please try again... ");
+			   System.out.println("Sorry but do not have enough to giveaway!!! Please try again... ");
 			   continue;
 		    }
 		    else {
