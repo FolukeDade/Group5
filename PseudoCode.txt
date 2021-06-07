@@ -1,0 +1,112 @@
+MAIN CLASS
+
+    This is where the program runs:-
+Integer is set to zero to ensure inputs are integers only.
+Database connectivity is verified via the DatabaseAdmin class
+
+If Database is not valid
+  Print "The Database was not found! PLease check for the correct path. "
+ Program ends
+
+Participants and Prizes text files are verified via the Common class
+If Participants text file is found, it is loaded into the program.
+
+If Participants text file is not found
+  Print "The Participants.txt file was not found! Please check for the correct path. "
+ Program ends
+
+If Prizes text file is found, it is loaded into the program.
+
+If Prizes text file is not found
+  Print "The Prizes.txt file was not found! Please check for the correct path. "
+ Program ends
+
+Program Begins after loading text files
+Program assigns random numbers to each participant
+
+WHILE number of prizes to be given away is less than or equal to the number available, keep loop active
+   Print "Welcome to our annual raffle drawings!! How many Prizes are we starting with in this round? - there are %d prizes - (0 for exit) : " + "\n", prizes.size() );
+IF number of prizes is zero end loop
+ELSE 
+  Validate via Validation class if the number of prizes requested is less than or equal to prizes left to giveaway
+IF number of prizes requested is more than what is left
+  Print "Sorry but do not have enough to giveaway!!! Please try again... "
+ELSE 
+  Print out winners and Prizes won.
+
+As prizes are won, they and their respective winners are removed from the pool of prizes and participants; the number of of giveaways decreases.
+   
+Winners and their prizes are stored in a Database table via the DatabaseAdmin class
+IF data to be inserted into database fails
+  Print "Warning!!! Inserting data failed."
+
+Raffle Ends
+History of raffle is uploaded to program vis GetHistory class
+   Print winners list 
+   Print prizes won list
+   Print date prizes were won
+
+IF data is unable to be loaded
+   Print "Warning!!! Something failed when retrieveing data from the Database"
+
+
+COMMON CLASS
+
+     Here the participants and prize lists are loaded from the C drive of the computer into the Java program as an Arraylist (how) 
+ instead of inputing the entire array list in the class.
+
+ TRY and CATCH exceptions search for text files containing the file names "Participants and Prizes" only and return only TXT files
+ 
+IF the filename of the file being searched for contains "Participants"
+    Print "===> Participants file was loaded"
+ ELSE
+    Print "===> Prizes file was loaded"
+
+Each participant is randomly selected along with a randomly selected winning number using the Math.random method
+The raffle numbers will not exceed the total number of participants hence the formular below
+   return(int) ((Math.random() * (maxNum - mniNum)) + minNum);
+
+
+
+VALIDATION CLASS
+
+  Here the number of prizes award during a round must be equal or lower than the prize array size offered at the time
+
+IF number of prizes less than or equal to current array size
+    TEST = true; (Move forward with program)
+ELSE 
+    TEST = false; (Ask to enter another number)
+run loop again after user input
+
+   There will also be validations for the txt files
+
+IF fileName exists (i.e "Participants" or "Prizes") 
+   TEST = true, (Move forward with program)
+ELSE
+   TEST = false; (Program error, txt files need to be uploaded properly)
+
+
+DATABASEADMIN CLASS
+
+  Here the java program checks to ensure trusted connectivity to the C Drive and SQL Database via the jdbc runner??(help)
+ Data stored in the Database table (history of winners) will be retrieved
+DISPLAY TABLE 
+   Print Table showing a list of previous winners; Date and prizes won
+
+TESTING
+IF connection is secure and complete; move forward with program
+ Print "Connection to SQLite has been extablished"
+ELSE
+  Throw an exception
+TRY and CATCH exception clause will catch error and run through loop again
+
+Java will request data from the table stored in the database
+   Request Participants, Prize won, Lotto Date
+
+
+GETHISTORY CLASS
+
+  Here the database connection is confirmed
+
+IF connection is false
+  Print "WARNING!! - Something went wrong accessting the Database"
