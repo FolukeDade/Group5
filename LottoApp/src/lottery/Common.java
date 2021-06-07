@@ -1,4 +1,47 @@
 package lottery;
+	import java.lang.Math;
+	import java.io.File;
+	import java.io.FileNotFoundException;
+
+	import java.util.*;  
+	
+public class Common {
+
+		
+    // Read a Text File (Participants and Prizes)
+	public static ArrayList<String> loadTextFiles(String fileName) {
+		ArrayList<String> textFile = new ArrayList<String>();
+		try {
+		Scanner scanner = new Scanner(new File(fileName)); 
+		while (scanner.hasNextLine()) {
+			textFile.add(scanner.nextLine());
+		}
+		scanner.close();
+		if (fileName.contains("Participants")) {
+		     System.out.println("===> Participants file was loaded");
+		}
+		else {
+			System.out.println("===> Prizes file was loaded");	
+		}
+		
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	}
+		
+		return textFile;
+	}
+	
+    
+	// Get the Participant's winner number 
+	public static int getRandom(int minNum, int maxNum) {
+			// minNum = First Participant number, participants ArrayList first = 0   
+		    // maxNum = Last Participant number, participants ArrayList last element
+
+		return (int) ((Math.random() * (maxNum - minNum)) + minNum); 
+	}
+}
+
+/*package lottery;
 
 	import java.lang.Math;
 	import java.io.File;
@@ -44,8 +87,8 @@ public class Common
 
 		public int getRandom(int num1, int num2) 
 		{
-		// min = value1,  
-	    // max = value2
+		// min = 0,  
+	    // max = 10
 		return (int) ((Math.random() * (num2 - num1)) + num1); 
 		}
-}
+}*/
