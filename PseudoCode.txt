@@ -88,7 +88,7 @@ ELSE
 
 DATABASEADMIN CLASS
 
-  Here the java program checks to ensure trusted connectivity to the C Drive and SQL Database via the jdbc runner??(help)
+  Here the java program checks to ensure trusted connectivity to the C Drive and SQL Database 
  Data stored in the Database table (history of winners) will be retrieved
 DISPLAY TABLE 
    Print Table showing a list of previous winners; Date and prizes won
