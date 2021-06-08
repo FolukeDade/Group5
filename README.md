@@ -20,7 +20,7 @@ Java 16.0.1, SQLite and sqlite-jdbc-3.34.0, The Main Java class and two text fil
 INSTALLATION
 ------------
 
-Install the LottoApp following the directions from the installation document.
+Install the LottoApp following the directions from the installation document (LottoApp - Instructions 2021-06-05).
 
 CONFIGURATION
 -------------
