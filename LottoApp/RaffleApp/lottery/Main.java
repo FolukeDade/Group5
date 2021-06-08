@@ -80,7 +80,7 @@ public class Main {
 		while (true) {	
 			
 		  Scanner sc = new Scanner(System.in);    //System.in is a standard input stream  
-		  System.out.format("Welcome to our annual raffle drawings!! How many Prizes are we starting with in this round? - there are %d prizes - (0 for exit) : " + "\n", prizes.size() );
+		  System.out.format("Welcome to our Annual Raffle Drawing!! How many Prizes are we starting with in this round? - there are %d prizes - (0 for exit) : " + "\n", prizes.size() );
 		  int giveAways = sc.nextInt();  
           
 		  if (giveAways == 0) {  // Exit the while
