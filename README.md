@@ -10,7 +10,7 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-The RaffleApp is a Java desktop program that produces prizes randomly.
+We created a RaffleApp desktop program using Java. The goal of the program is randomly select winners and prizes during a raffle drawing. 
 
 REQUIREMENTS
 ------------
