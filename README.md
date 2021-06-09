@@ -31,7 +31,7 @@ CONFIGURATION
 TESTING
 -------------
 
- Manual and Automated testing (Regression tests). We tested the Class Methods using JUNIT5.
+ Manual and Automated testing (Regression tests). We tested the Class Methods using JUNIT5. Example: TestCommonClass
 
 MAINTAINERS
 -----------
