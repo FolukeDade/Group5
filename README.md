@@ -5,6 +5,7 @@ CONTENTS OF THIS FILE
  * Requirements
  * Installation
  * Configuration
+ * Testing
  * Maintainers
 
 INTRODUCTION
@@ -26,6 +27,11 @@ CONFIGURATION
 -------------
 
  N/A
+ 
+TESTING
+-------------
+
+ Manual and Automated testing (Regression tests). We tested the Class Methods using JUNIT5.
 
 MAINTAINERS
 -----------
